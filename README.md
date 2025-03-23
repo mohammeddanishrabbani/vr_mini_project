@@ -163,6 +163,14 @@ The dataset consists of two main folders; however, only **Folder 1** was used fo
 - Data preprocessing and augmentation were necessary to improve generalization.
 
 ### Results
+#### Results with traditional methods for segmentation
+![image](https://github.com/user-attachments/assets/c82cad30-bd72-4ad6-b75e-a7dcf5aa1144)
+
+
+#### Results with UNET for segmentation
+![image](https://github.com/user-attachments/assets/99f08dc7-9b28-47cd-aad8-ccbe773c0a54)
+
+#### Result Summary
 | Method                  | Accuracy | Intersection over Union     | Dice Coefficient|
 |-------------------------|--------- |---------------------------- |-----------------|
 | Region Growing          | 0.6730   | 0.2755                      | 0.3652          |
