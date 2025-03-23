@@ -27,19 +27,87 @@ The images are in JPG and PNG formats.
 3. **Neural Network (3-Layer, 1 Hidden Layer)**: Outperforms traditional methods by learning hierarchical representations.
 4. **Convolutional Neural Network (CNN)**: Achieves the best performance by leveraging spatial patterns in images.
 
+         CNN Architecture
+       
+           ----------------------------------------------------------------
+                    Layer (type)               Output Shape         Param #
+            ================================================================
+                        Conv2d-1         [-1, 32, 128, 128]             896
+                     MaxPool2d-2           [-1, 32, 64, 64]               0
+                        Conv2d-3           [-1, 64, 64, 64]          18,496
+                     MaxPool2d-4           [-1, 64, 32, 32]               0
+                        Conv2d-5          [-1, 128, 32, 32]          73,856
+                     MaxPool2d-6          [-1, 128, 16, 16]               0
+                        Linear-7                  [-1, 128]       4,194,432
+                       Dropout-8                  [-1, 128]               0
+                        Linear-9                    [-1, 1]             129
+            ================================================================
+            Total params: 4,287,809
+            Trainable params: 4,287,809
+            Non-trainable params: 0
+            ----------------------------------------------------------------
+            Input size (MB): 0.19
+            Forward/backward pass size (MB): 8.75
+            Params size (MB): 16.36
+            Estimated Total Size (MB): 25.30
+            ----------------------------------------------------------------
+        
+       
+
 ### Challenges Faced
 - Using a **6-layer neural network** resulted in overfitting, with zero training loss but high test loss.
 - **SIFT feature extraction** had variable-length descriptors, requiring transformation into a fixed-length 128-dimensional vector by averaging descriptors.
 
+
 ### Results
+#### Results with Traditional Classification Techniques
 ![image](https://github.com/user-attachments/assets/3ad72204-e65d-4fde-909f-c1144aca243d)
-
-
-
+![image](https://github.com/user-attachments/assets/c1935370-54ca-4e00-8fb2-e1358b3065fd)
+![image](https://github.com/user-attachments/assets/5250eb97-6ebc-49fa-87cf-718c58172d14)
 - **HOG feature extraction** improved traditional methods' accuracy.
 - **SVM outperformed other traditional models**, but CNN still performed best.
 - **A 5-layer neural network with SIFT showed lower performance than a 3-layer NN with HOG.**
 
+
+#### Results with CNN for Classification
+#### MODEL PARAMETERS
+    Learning Rate: 0.01
+    Batch Size: 32
+    Optimizer: Adam
+    Activation: Sigmoid
+
+![image](https://github.com/user-attachments/assets/002e1ce6-630f-44fb-a3ef-00ceb7376e40)
+
+
+#### MODEL PARAMETERS
+    Learning Rate: 0.005
+    Batch Size: 32
+    Optimizer: Adam with Weight Decay 1e-4
+    Activation: Sigmoid
+![image](https://github.com/user-attachments/assets/547ed5ec-8e28-4f63-810f-cac1338c88d8)
+
+
+#### MODEL PARAMETERS
+    Learning Rate: 0.005
+    Batch Size: 32
+    Optimizer: RMSprop
+    Activation: Sigmoid
+    L2 Regularization: 1e-5
+![image](https://github.com/user-attachments/assets/f1db84d4-6a1e-411f-8063-8635500cfcc6)
+
+
+#### MODEL PARAMETERS
+    Learning Rate: 0.001
+    Batch Size: 32
+    Optimizer: adam
+    Activation: Sigmoid
+![image](https://github.com/user-attachments/assets/1bbe7820-54f4-4d00-af5e-d0a8d6c87d02)
+
+
+
+
+
+    
 ### Conclusion
 - Traditional methods like SVM and Random Forest show varying performance, with SVM being superior.
 - Neural networks outperform traditional models due to their hierarchical feature learning.
