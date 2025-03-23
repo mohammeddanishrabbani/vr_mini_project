@@ -32,6 +32,10 @@ The images are in JPG and PNG formats.
 - **SIFT feature extraction** had variable-length descriptors, requiring transformation into a fixed-length 128-dimensional vector by averaging descriptors.
 
 ### Results
+![image](https://github.com/user-attachments/assets/3ad72204-e65d-4fde-909f-c1144aca243d)
+
+
+
 - **HOG feature extraction** improved traditional methods' accuracy.
 - **SVM outperformed other traditional models**, but CNN still performed best.
 - **A 5-layer neural network with SIFT showed lower performance than a 3-layer NN with HOG.**
